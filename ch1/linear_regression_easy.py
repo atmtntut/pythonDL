@@ -27,7 +27,8 @@ net = nn.Sequential()
 net.add(nn.Dense(1))
 
 # 初始化w,b
-net.initialize(init.Normal(sigma=0.1))
+#net.initialize(init.Normal(sigma=0.1))
+net.initialize()
 
 # 残差
 loss = gloss.L2Loss()
@@ -35,7 +36,7 @@ loss = gloss.L2Loss()
 epochs = []
 losses = []
 # 训练
-num_epochs = 3
+num_epochs = 5
 trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.03})
 for epoch in range(num_epochs):
     for x,y in data_iter:
