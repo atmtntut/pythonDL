@@ -14,25 +14,6 @@ net.add(gluon.nn.Dense(512, activation='relu'))
 net.add(gluon.nn.Dense(256, activation='relu'))
 net.add(gluon.nn.Dense(10))
 net.initialize(init.Normal(sigma=0.1))
-#num_hiddens = 512
-#num_hiddens1 = 128
-#W1 = nd.random.normal(scale=0.1, shape=(784, num_hiddens))
-#b1 = nd.zeros(num_hiddens)
-#W2 = nd.random.normal(scale=0.1, shape=(num_hiddens, num_hiddens1))
-#b2 = nd.zeros(num_hiddens1)
-#W3 = nd.random.normal(scale=0.1, shape=(num_hiddens1, 10))
-#b3 = nd.zeros(10)
-#params = [W1, b1, W2, b2, W3, b3]
-#for param in params:
-#    param.attach_grad()
-#
-#def relu(X):
-#    return nd.maximum(X, 0)
-#def net(X):
-#    X = X.reshape((-1, 784))
-#    H = relu(nd.dot(X, W1) + b1)
-#    H1 = relu(nd.dot(H, W2) + b2)
-#    return nd.dot(H1, W3) + b3
 
 #train
 loss_func = gluon.loss.SoftmaxCrossEntropyLoss()
